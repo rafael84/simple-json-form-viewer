@@ -1,0 +1,29 @@
+{
+  "name": "simple-json-form-viewer",
+  "version": "0.0.0",
+  "description": "simple-json-form-viewer",
+  "main": "dist/simple-json-form-viewer.min.js",
+  "homepage": "https://github.com/rafael84/simple-json-form-viewer",
+  "authors": [
+    "Rafael Martins"
+  ],
+  "moduleType": [
+    "amd",
+    "globals",
+    "node"
+  ],
+  "keywords": [
+    "react",
+    "react-component"
+  ],
+  "license": "MIT",
+  "ignore": [
+    ".editorconfig",
+    ".gitignore",
+    "package.json",
+    "src",
+    "node_modules",
+    "example",
+    "test"
+  ]
+}
