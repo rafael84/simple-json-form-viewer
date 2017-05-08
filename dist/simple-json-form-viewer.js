@@ -12,37 +12,37 @@ var isObject = function isObject(o) {
 };
 
 var styles = {
-	"form": {
-		"display": "flex",
-		"flexFlow": "row wrap",
-		"justifyContent": "space-around",
-		"alignItems": "stretch",
-		"alignContent": "center",
-		"backgroundColor": "rgba(0,0,0,.03)"
+	form: {
+		display: "flex",
+		flexFlow: "row wrap",
+		justifyContent: "space-around",
+		alignItems: "stretch",
+		alignContent: "space-around"
 	},
-	"label": {
-		"display": "block",
-		"fontWeight": "900",
-		"lineHeight": "0.5rem"
+	label: {
+		display: "block",
+		fontWeight: "900",
+		lineHeight: "1.5rem"
 	},
-	"input": {
-		"lineHeight": "1.5rem",
-		"backgroundColor": "white",
-		"border": "1px solid #cacaca",
-		"borderRadius": "2px",
-		"padding": "0.1rem 0.5rem"
+	input: {
+		lineHeight: "1.5rem",
+		backgroundColor: "white",
+		border: "1px solid #cacaca",
+		borderRadius: "2px",
+		padding: "0.1rem 0.5rem"
 	},
-	"field": {
-		"flexGrow": "1",
-		"flexBasis": "content",
-		"display": "flex",
-		"flexFlow": "column wrap",
-		"justifyContent": "space-around",
-		"alignItems": "stretch",
-		"alignContent": "center",
-		"border": "1px solid rgba(0,0,0,.1)",
-		"borderRadius": "4px",
-		"padding": "0.5rem"
+	field: {
+		flexGrow: "1",
+		display: "flex",
+		flexFlow: "column wrap",
+		justifyContent: "space-around",
+		alignItems: "stretch",
+		alignContent: "space-around",
+		border: "1px solid rgba(0,0,0,.1)",
+		borderRadius: "4px",
+		padding: "0.5rem",
+		margin: "0.25rem",
+		backgroundColor: "rgba(0,0,0,.03)"
 	}
 };
 
