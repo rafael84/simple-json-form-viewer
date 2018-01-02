@@ -10,6 +10,8 @@ var isObject = function isObject(o) {
 	return o !== null && typeof o === 'object';
 };
 
+var colors = ["#f8f8f8", "#e0e0e0", "#d0d0d0"];
+
 var styles = {
 	form: {
 		display: "flex",
@@ -23,7 +25,7 @@ var styles = {
 		fontWeight: "900",
 		lineHeight: "1.5rem"
 	},
-	input: {
+	value: {
 		lineHeight: "1.5rem",
 		backgroundColor: "white",
 		border: "1px solid #cacaca",
@@ -58,22 +60,18 @@ var JSONViewer = React.createClass({
 			Object.keys(data).map(function (key) {
 				return React.createElement(
 					'div',
-					{
-						key: key,
-						style: styles.field
-					},
+					{ key: key, style: styles.field },
 					React.createElement(
 						'label',
 						{ style: styles.label },
 						key
 					),
-					isObject(data[key]) ? React.createElement(JSONViewer, {
-						data: data[key]
-					}) : React.createElement('input', {
-						type: 'text',
-						value: data[key] || "",
+					isObject(data[key]) ? React.createElement(JSONViewer, { data: data[key] }) : (data[key] + '').length <= 140 ? React.createElement('input', { type: 'text', value: data[key], readOnly: true, style: styles.value }) : React.createElement('textarea', {
+						rows: Math.min(20, (data[key] + '').split('\n').length + 1),
+						cols: 40,
+						value: data[key],
 						readOnly: true,
-						style: styles.input
+						style: styles.value
 					})
 				);
 			})
