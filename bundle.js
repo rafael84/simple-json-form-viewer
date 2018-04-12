@@ -66,7 +66,7 @@ var JSONViewer = React.createClass({
 						{ style: styles.label },
 						key
 					),
-					isObject(data[key]) ? React.createElement(JSONViewer, { data: data[key] }) : (data[key] + '').length <= 140 ? React.createElement('input', { type: 'text', value: data[key], readOnly: true, style: styles.value }) : React.createElement('textarea', {
+					isObject(data[key]) ? React.createElement(JSONViewer, { data: data[key] }) : (data[key] + '').length <= 140 ? React.createElement('input', { type: 'text', value: data[key] || '', readOnly: true, style: styles.value }) : React.createElement('textarea', {
 						rows: Math.min(20, (data[key] + '').split('\n').length + 1),
 						cols: 40,
 						value: data[key],
