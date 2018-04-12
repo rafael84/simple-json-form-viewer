@@ -63,7 +63,7 @@ var JSONViewer = React.createClass({
 										<JSONViewer data={data[key]}/>
 									) : (
                                         (data[key] + '').length <= 140 ? (
-                                            <input type="text" value={data[key]} readOnly style={styles.value} />
+                                            <input type="text" value={data[key] || ''} readOnly style={styles.value} />
                                         ) : (
                                             <textarea
                                                 rows={Math.min(20, (data[key] + '').split('\n').length + 1)}
