@@ -4,6 +4,13 @@ var isObject = function(o) {
 	return o !== null && typeof o === 'object';
 }
 
+var valueOf = function(object, key) {
+    if (object === null || object[key] === null) {
+        return ''
+    }
+    return String(object[key])
+}
+
 var colors = [
     "#f8f8f8",
     "#e0e0e0",
@@ -39,7 +46,7 @@ var styles = {
 		alignContent:    "space-around",
 		border:          "1px solid rgba(0,0,0,.1)",
 		borderRadius:    "4px",
-		padding:         "0.5rem",
+		padding:         "0.75rem",
 		margin:          "0.25rem",
 		backgroundColor: "rgba(0,0,0,.03)",
 	}
@@ -48,7 +55,6 @@ var styles = {
 var JSONViewer = React.createClass({
 	render () {
 		let {data={}} = this.props;
-
 		return (
 			<div style={styles.form}>
 				{
@@ -59,16 +65,23 @@ var JSONViewer = React.createClass({
 									{key}
 								</label>
 								{
-									isObject(data[key]) ? (
-										<JSONViewer data={data[key] || {}}/>
+									data && isObject(data[key]) ? (
+										<JSONViewer
+                                            data={data && data[key] || {}}
+                                        />
 									) : (
-                                        (data[key] + '').length <= 140 ? (
-                                            <input type="text" value={data[key] || ''} readOnly style={styles.value} />
+                                        valueOf(data, key).length <= 140 ? (
+                                            <input
+                                                type="text"
+                                                value={valueOf(data, key)}
+                                                readOnly
+                                                style={styles.value}
+                                            />
                                         ) : (
                                             <textarea
-                                                rows={Math.min(20, (data[key] + '').split('\n').length + 1)}
+                                                rows={Math.min(20, valueOf(data, key).split('\n').length + 1)}
                                                 cols={40}
-                                                value={data[key] || ''}
+                                                value={valueOf(data, key)}
                                                 readOnly
                                                 style={styles.value}
                                             />

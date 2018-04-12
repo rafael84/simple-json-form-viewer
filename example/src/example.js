@@ -13,6 +13,10 @@ var App = React.createClass({
 							"type": "donut",
 							"name": "Cake",
 							"ppu": 0.55,
+                            "empty": {
+
+                            },
+                            "null": null,
                             "parent": {
                                 "child": {
                                     "grand child": {
