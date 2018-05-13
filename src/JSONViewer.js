@@ -1,4 +1,5 @@
 var React = require('react');
+var createClass = require('create-react-class');
 
 var isObject = function(o) {
 	return o !== null && typeof o === 'object';
@@ -52,7 +53,7 @@ var styles = {
 	}
 }
 
-var JSONViewer = React.createClass({
+var JSONViewer = createClass({
 	render () {
 		let {data={}} = this.props;
 		return (
