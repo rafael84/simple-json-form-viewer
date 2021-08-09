@@ -4,6 +4,8 @@
 
 [![NPM](https://img.shields.io/npm/v/simple-json-form-viewer.svg)](https://www.npmjs.com/package/simple-json-form-viewer) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
+Live demo: [rafael84.github.io/simple-json-form-viewer](http://rafael84.github.io/simple-json-form-viewer/)
+
 ## Install
 
 ```bash
