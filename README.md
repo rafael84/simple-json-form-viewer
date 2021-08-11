@@ -17,12 +17,12 @@ npm install --save simple-json-form-viewer
 ```jsx
 import React, { Component } from 'react'
 
-import MyComponent from 'simple-json-form-viewer'
+import { JSONViewer } from 'simple-json-form-viewer'
 import 'simple-json-form-viewer/dist/index.css'
 
 class Example extends Component {
   render() {
-    return <MyComponent />
+    return <JSONViewer data={{ foo: 'bar' }} />
   }
 }
 ```
